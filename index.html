@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content="Hanoora Nexus — the light of Hanoi. AI-powered data core that flows into your applications." />
     <title>Hanoora Nexus | AI Data Platform</title>
-    <link rel="icon" href="assets/images/logo-mark.svg" type="image/svg+xml" />
+    <link rel="icon" href="assets/images/favicon.png" type="image/png" />
+    <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
@@ -17,11 +18,7 @@
     <header class="site-header" id="top">
         <div class="container header-inner">
             <a class="brand" href="#home">
-                <img src="assets/images/logo-mark.svg" alt="Hanoora Nexus" width="40" height="40" />
-                <span class="brand-text">
-                    <span class="brand-name">Hanoora</span>
-                    <span class="brand-sub">Nexus</span>
-                </span>
+                <img class="brand-logo" src="assets/images/logo-header.png" alt="Hanoora Nexus" width="259" height="64" />
             </a>
             <button class="nav-toggle" id="nav-toggle" aria-label="Menu" aria-expanded="false">
                 <span></span><span></span><span></span>
@@ -60,7 +57,7 @@
                         <span class="hero-line hero-large gradient-text reveal-item" style="--d:2" data-i18n="hero.line2">Hanoora Nexus</span>
                         <span class="hero-line hero-xsmall reveal-item" style="--d:3" data-i18n="hero.line3">powers your app</span>
                     </h1>
-                    <p class="hero-lead reveal-item" style="--d:4" data-i18n="hero.lead">Hanoi + noor (light) — a central node where data is processed by AI logic and delivered into your applications.</p>
+                    <p class="hero-lead reveal-item" style="--d:4" data-i18n="hero.lead">One AI core for the full pipeline — ingest data, apply intelligent logic, and deliver results directly into your applications.</p>
                     <div class="hero-actions reveal-item" style="--d:5">
                         <a class="btn btn-primary" href="#contact" data-i18n="hero.cta1">Request a demo</a>
                         <a class="btn btn-ghost" href="#process" data-i18n="hero.cta2">See the flow</a>
@@ -76,51 +73,81 @@
             </div>
         </section>
 
+        <!-- Metrics -->
+        <section class="metrics-strip" aria-label="Platform highlights">
+            <div class="container metrics-grid reveal">
+                <div class="metric-card">
+                    <span class="metric-value gradient-text" data-i18n="metrics.m1.value">3-in-1</span>
+                    <span class="metric-label" data-i18n="metrics.m1.label">Data · AI · App pipeline</span>
+                </div>
+                <div class="metric-card">
+                    <span class="metric-value gradient-text" data-i18n="metrics.m2.value">API-first</span>
+                    <span class="metric-label" data-i18n="metrics.m2.label">REST · GraphQL · Webhooks</span>
+                </div>
+                <div class="metric-card">
+                    <span class="metric-value gradient-text" data-i18n="metrics.m3.value">Hanoi</span>
+                    <span class="metric-label" data-i18n="metrics.m3.label">Local roots, global scale</span>
+                </div>
+                <div class="metric-card">
+                    <span class="metric-value gradient-text" data-i18n="metrics.m4.value">24/7</span>
+                    <span class="metric-label" data-i18n="metrics.m4.label">Pipeline observability</span>
+                </div>
+            </div>
+        </section>
+
         <!-- Technologies -->
         <section class="section technologies" id="technologies">
             <div class="container">
-                <div class="section-head reveal">
-                    <p class="eyebrow" data-i18n="tech.eyebrow">Stack & platforms</p>
-                    <h2 data-i18n="tech.title">Technologies we work with</h2>
-                    <p class="section-desc" data-i18n="tech.desc">From customer-facing apps to factory-floor connectivity — we choose pragmatic, proven tools.</p>
+                <div class="section-head section-head--center reveal">
+                    <p class="eyebrow" data-i18n="tech.eyebrow">The stack</p>
+                    <h2 data-i18n="tech.title">Built for intelligent pipelines</h2>
+                    <p class="section-desc" data-i18n="tech.desc">Everything you need to ingest data, run AI logic and ship outcomes to production apps.</p>
+                    <div class="tech-pipeline" aria-hidden="true">
+                        <span data-i18n="hero.badge1">Data In</span>
+                        <i></i>
+                        <span class="is-core" data-i18n="hero.badge2">AI Logic</span>
+                        <i></i>
+                        <span data-i18n="hero.badge3">App Out</span>
+                    </div>
                 </div>
                 <div class="tech-grid reveal">
                     <article class="tech-card">
-                        <div class="tech-icon" style="--c:#FBBF24">&#9889;</div>
+                        <div class="tech-icon" style="--c:#22D3EE">&#9889;</div>
                         <h3 data-i18n="tech.c1.title">Data ingestion</h3>
-                        <p data-i18n="tech.c1.desc">React, Vue, Node.js, REST & GraphQL APIs, responsive PWAs.</p>
+                        <p data-i18n="tech.c1.desc">APIs, webhooks, streams, batch files and event buses into one Nexus core.</p>
                     </article>
-                    <article class="tech-card">
-                        <div class="tech-icon" style="--c:#6366F1">&#9733;</div>
+                    <article class="tech-card tech-card--highlight">
+                        <div class="tech-icon" style="--c:#2563EB">&#9733;</div>
                         <h3 data-i18n="tech.c2.title">AI & models</h3>
-                        <p data-i18n="tech.c2.desc">AWS, Docker, PostgreSQL, Redis, microservices & CI/CD.</p>
+                        <p data-i18n="tech.c2.desc">LLMs, classification, embeddings, rules engines and custom model orchestration.</p>
                     </article>
                     <article class="tech-card">
-                        <div class="tech-icon" style="--c:#22D3EE">&#9654;</div>
+                        <div class="tech-icon" style="--c:#06B6D4">&#9654;</div>
                         <h3 data-i18n="tech.c3.title">App delivery</h3>
-                        <p data-i18n="tech.c3.desc">ERP integrations, workflow automation, reporting & dashboards.</p>
+                        <p data-i18n="tech.c3.desc">REST, GraphQL, webhooks and SDKs to embed intelligence in your products.</p>
                     </article>
                     <article class="tech-card">
-                        <div class="tech-icon" style="--c:#A78BFA">&#9673;</div>
+                        <div class="tech-icon" style="--c:#1E3A8A">&#9673;</div>
                         <h3 data-i18n="tech.c4.title">Observability</h3>
-                        <p data-i18n="tech.c4.desc">Mesh sensors, GPS tracking, Arduino, Raspberry Pi, STM32, MSP430.</p>
+                        <p data-i18n="tech.c4.desc">Pipeline tracing, audit logs, quality metrics and alerting.</p>
                     </article>
                     <article class="tech-card">
-                        <div class="tech-icon" style="--c:#34D399">&#9670;</div>
+                        <div class="tech-icon" style="--c:#38BDF8">&#9670;</div>
                         <h3 data-i18n="tech.c5.title">Security</h3>
-                        <p data-i18n="tech.c5.desc">Full-text search, analytics pipelines, PDF & spreadsheet generation.</p>
+                        <p data-i18n="tech.c5.desc">Encryption, access control, tenant isolation and compliance-ready design.</p>
                     </article>
                     <article class="tech-card">
-                        <div class="tech-icon" style="--c:#F59E0B">&#8644;</div>
+                        <div class="tech-icon" style="--c:#0EA5E9">&#8644;</div>
                         <h3 data-i18n="tech.c6.title">Scale</h3>
-                        <p data-i18n="tech.c6.desc">Community-driven stacks, transparent delivery, long-term maintainability.</p>
+                        <p data-i18n="tech.c6.desc">Cloud-native architecture, queues, caching and horizontal scaling.</p>
                     </article>
                 </div>
             </div>
         </section>
 
         <!-- Products -->
-        <section class="section products" id="products">
+        <section class="section products section--gradient" id="products">
+            <div class="section-deco section-deco--right" aria-hidden="true"></div>
             <div class="container">
                 <div class="section-head reveal">
                     <p class="eyebrow" data-i18n="prod.eyebrow">What we build</p>
@@ -163,71 +190,102 @@
 
         <!-- About -->
         <section class="section about" id="about">
-            <div class="container about-grid">
-                <div class="about-copy reveal">
-                    <p class="eyebrow" data-i18n="about.eyebrow">Our story</p>
-                    <h2><span data-i18n="about.title1">Who</span> <span class="gradient-text" data-i18n="about.title2">we are</span></h2>
-                    <p class="section-desc" data-i18n="about.desc">Born in Hanoi — Hanoora blends local innovation with a global vision. We built Nexus as the core where data meets intelligence and becomes real product value.</p>
+            <div class="about-bg" aria-hidden="true">
+                <div class="about-watermark-bg">HANOO</div>
+            </div>
+            <div class="container">
+                <div class="about-hero reveal">
+                    <div class="about-hero-mark">
+                        <img src="assets/images/logo-mark.png" alt="" width="96" height="96" />
+                    </div>
+                    <div class="about-hero-copy">
+                        <p class="eyebrow" data-i18n="about.eyebrow">Our story</p>
+                        <h2><span data-i18n="about.title1">Light of</span> <span class="gradient-text" data-i18n="about.title2">Hanoi</span></h2>
+                        <p class="section-desc" data-i18n="about.desc">Born in Hanoi — Hanoora blends local innovation with a global vision. We built Nexus as the core where data meets intelligence and becomes real product value.</p>
+                    </div>
                 </div>
-                <div class="team-grid reveal">
-                    <article class="team-card">
-                        <div class="avatar" style="--hue:45">HN</div>
-                        <blockquote data-i18n="about.q1">Noor — light — is not decoration. It's clarity for every decision your data drives.</blockquote>
-                        <p class="team-name" data-i18n="about.r1">Vision · Light of Hanoi</p>
+                <div class="about-manifesto reveal">
+                    <article class="manifesto-card manifesto-card--1">
+                        <span class="manifesto-num">01</span>
+                        <div class="manifesto-body">
+                            <h3 data-i18n="about.p1.title">Hanoora</h3>
+                            <blockquote data-i18n="about.q1">Noor — light — is not decoration. It's clarity for every decision your data drives.</blockquote>
+                            <p class="manifesto-label" data-i18n="about.r1">Vision · Light of Hanoi</p>
+                        </div>
                     </article>
-                    <article class="team-card">
-                        <div class="avatar" style="--hue:250">NX</div>
-                        <blockquote data-i18n="about.q2">Nexus is the node — one trusted core connecting sources, models and applications.</blockquote>
-                        <p class="team-name" data-i18n="about.r2">Platform · The Core</p>
+                    <article class="manifesto-card manifesto-card--2">
+                        <span class="manifesto-num">02</span>
+                        <div class="manifesto-body">
+                            <h3 data-i18n="about.p2.title">Nexus</h3>
+                            <blockquote data-i18n="about.q2">Nexus is the node — one trusted core connecting sources, models and applications.</blockquote>
+                            <p class="manifesto-label" data-i18n="about.r2">Platform · The Core</p>
+                        </div>
                     </article>
-                    <article class="team-card">
-                        <div class="avatar" style="--hue:190">AI</div>
-                        <blockquote data-i18n="about.q3">Data flows in, logic processes it, your app delivers the outcome.</blockquote>
-                        <p class="team-name" data-i18n="about.r3">Engine · AI Pipeline</p>
+                    <article class="manifesto-card manifesto-card--3">
+                        <span class="manifesto-num">03</span>
+                        <div class="manifesto-body">
+                            <h3 data-i18n="about.p3.title">Pipeline</h3>
+                            <blockquote data-i18n="about.q3">Data flows in, logic processes it, your app delivers the outcome.</blockquote>
+                            <p class="manifesto-label" data-i18n="about.r3">Engine · AI Pipeline</p>
+                        </div>
                     </article>
                 </div>
             </div>
         </section>
 
         <!-- Process -->
-        <section class="section process" id="process">
+        <section class="section process section--dark" id="process">
+            <div class="section-deco section-deco--glow" aria-hidden="true"></div>
             <div class="container">
                 <div class="section-head reveal">
                     <p class="eyebrow" data-i18n="proc.eyebrow">Methodology</p>
                     <h2 data-i18n="proc.title">How we work</h2>
                 </div>
-                <ol class="process-steps reveal">
+                <div class="process-track reveal">
+                    <div class="process-line" aria-hidden="true"></div>
+                    <ol class="process-steps">
                     <li class="step-card">
+                        <span class="step-node" aria-hidden="true"></span>
                         <span class="step-num">01</span>
                         <h3 data-i18n="proc.s1.title">Data in</h3>
                         <p data-i18n="proc.s1.desc">Ingest streams, APIs, files and events into the Nexus core.</p>
                     </li>
                     <li class="step-card">
+                        <span class="step-node" aria-hidden="true"></span>
                         <span class="step-num">02</span>
                         <h3 data-i18n="proc.s2.title">AI logic</h3>
                         <p data-i18n="proc.s2.desc">Process, classify, predict and reason with configurable models.</p>
                     </li>
                     <li class="step-card">
+                        <span class="step-node" aria-hidden="true"></span>
                         <span class="step-num">03</span>
                         <h3 data-i18n="proc.s3.title">App out</h3>
                         <p data-i18n="proc.s3.desc">Deliver insights and actions into web, mobile and enterprise apps.</p>
                     </li>
                     <li class="step-card">
+                        <span class="step-node" aria-hidden="true"></span>
                         <span class="step-num">04</span>
                         <h3 data-i18n="proc.s4.title">Monitor</h3>
                         <p data-i18n="proc.s4.desc">Observe pipelines, audit outputs and improve continuously.</p>
                     </li>
                 </ol>
+                </div>
             </div>
         </section>
 
         <!-- Contact -->
-        <section class="section contact" id="contact">
+        <section class="section contact section--cta" id="contact">
+            <div class="section-deco" aria-hidden="true"></div>
             <div class="container contact-grid">
                 <div class="contact-copy reveal">
                     <p class="eyebrow" data-i18n="contact.eyebrow">Get in touch</p>
                     <h2 data-i18n="contact.title">Let's talk about your project</h2>
                     <p data-i18n="contact.desc">Share a brief overview of your idea — we'll respond within 1–2 business days.</p>
+                    <ul class="contact-highlights">
+                        <li data-i18n="contact.f1">Free architecture walkthrough</li>
+                        <li data-i18n="contact.f2">Response within 1–2 business days</li>
+                        <li data-i18n="contact.f3">EN · VI · DE supported</li>
+                    </ul>
                 </div>
                 <form class="contact-form reveal" id="contact-form" novalidate>
                     <label>
@@ -253,9 +311,10 @@
     </main>
 
     <footer class="site-footer">
+        <div class="footer-accent" aria-hidden="true"></div>
         <div class="container footer-grid">
             <div class="footer-col footer-brand">
-                <img src="assets/images/logo-mark.svg" alt="" width="36" height="36" />
+                <img class="footer-logo" src="assets/images/logo-footer.png" alt="Hanoora Nexus" width="160" height="160" />
                 <p class="footer-tagline" data-i18n="footer.tagline">Light of Hanoi · AI Nexus Core</p>
             </div>
             <div class="footer-col">
