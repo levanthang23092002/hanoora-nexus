@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="none">
+  <defs>
+    <linearGradient id="flow" x1="96" y1="256" x2="416" y2="256" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#22D3EE"/>
+      <stop offset=".5" stop-color="#6366F1"/>
+      <stop offset="1" stop-color="#FBBF24"/>
+    </linearGradient>
+    <linearGradient id="node" x1="220" y1="180" x2="292" y2="332" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#818CF8"/>
+      <stop offset="1" stop-color="#F59E0B"/>
+    </linearGradient>
+    <filter id="glow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="12" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <rect width="512" height="512" rx="112" fill="#0B1220"/>
+  <path d="M108 256c0-82 66-148 148-148" stroke="#334155" stroke-width="14" stroke-linecap="round"/>
+  <path d="M404 256c0 82-66 148-148 148" stroke="#334155" stroke-width="14" stroke-linecap="round"/>
+  <path d="M120 256h96" stroke="url(#flow)" stroke-width="12" stroke-linecap="round"/>
+  <path d="M296 256h96" stroke="url(#flow)" stroke-width="12" stroke-linecap="round"/>
+  <polygon points="228,256 212,244 212,268" fill="#22D3EE"/>
+  <polygon points="284,256 300,244 300,268" fill="#FBBF24"/>
+  <circle cx="256" cy="256" r="72" fill="#111827" stroke="url(#flow)" stroke-width="6" filter="url(#glow)"/>
+  <circle cx="256" cy="256" r="44" fill="url(#node)"/>
+  <path d="M256 228v20l14 10" stroke="#FFFBEB" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="120" cy="256" r="16" fill="#0F172A" stroke="#22D3EE" stroke-width="4"/>
+  <circle cx="392" cy="256" r="16" fill="#0F172A" stroke="#FBBF24" stroke-width="4"/>
+  <circle cx="120" cy="256" r="5" fill="#22D3EE"/>
+  <circle cx="392" cy="256" r="5" fill="#FBBF24"/>
+  <text x="256" y="404" text-anchor="middle" fill="#64748B" font-family="Inter,Segoe UI,sans-serif" font-size="22" font-weight="600" letter-spacing="4">NEXUS</text>
+</svg>

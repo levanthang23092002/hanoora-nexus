@@ -1,0 +1,82 @@
+/* Custom differences from original Rasia site */
+
+:root {
+    --accent: #4f46e5;
+    --accent-hover: #6366f1;
+    --accent-soft: rgba(79, 70, 229, 0.15);
+}
+
+.blue-rasia,
+.bg-rasia {
+    color: var(--accent) !important;
+}
+
+.bg-rasia {
+    background: var(--accent) !important;
+}
+
+.project-thumbnails li a div.back {
+    background: var(--accent);
+}
+
+#jobs form input:focus,
+#jobs form textarea:focus {
+    border-color: var(--accent);
+}
+
+#jobs form button:hover {
+    color: var(--accent);
+    border-color: var(--accent);
+}
+
+#top li.active a,
+#top li a.active {
+    color: #e0e7ff;
+}
+
+#header label a.lang-active {
+    color: #fff;
+    font-weight: bold;
+}
+
+.footer-bottom .copyright-text {
+    font-size: 16px;
+}
+
+@media (max-width: 1024px) {
+    body {
+        min-width: 320px;
+    }
+
+    #home h1 {
+        font-size: 48px !important;
+    }
+
+    #product-content {
+        width: 100%;
+        padding: 0 20px;
+        box-sizing: border-box;
+    }
+
+    #product-content .left-container,
+    #product-content .right-container {
+        width: 100%;
+        float: none;
+        padding: 0;
+        text-align: left;
+    }
+
+    #jobs form {
+        width: 90%;
+        float: none;
+        margin: 0 auto;
+        padding: 30px 5%;
+    }
+
+    footer .footer-column {
+        width: 90%;
+        margin: 0 5% 24px !important;
+        float: none;
+        display: block;
+    }
+}
