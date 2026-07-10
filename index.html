@@ -4,10 +4,11 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content="Hanoora Nexus — the light of Hanoi. AI-powered data core that flows into your applications." />
-    <title>Hanoora Nexus | AI Data Platform</title>
-    <link rel="icon" href="assets/images/logo/7.png" type="image/png" sizes="32x32" />
-    <link rel="icon" href="assets/images/logo/7.png" type="image/png" sizes="500x500" />
-    <link rel="apple-touch-icon" href="assets/images/logo/7.png" />
+    <title>Hanoora Nexus</title>
+    <link rel="icon" href="favicon.ico" sizes="any" />
+    <link rel="icon" href="assets/images/logo/favicon-32.png?v=2" type="image/png" sizes="32x32" />
+    <link rel="icon" href="assets/images/logo/favicon-48.png?v=2" type="image/png" sizes="48x48" />
+    <link rel="apple-touch-icon" href="assets/images/logo/favicon-180.png?v=2" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
@@ -80,23 +81,25 @@
 
         <!-- Metrics -->
         <section class="metrics-strip" aria-label="Platform highlights">
-            <div class="container metrics-grid reveal">
-                <div class="metric-card">
-                    <span class="metric-value gradient-text" data-i18n="metrics.m1.value">3-in-1</span>
-                    <span class="metric-label" data-i18n="metrics.m1.label">Data · AI · App pipeline</span>
-                </div>
-                <div class="metric-card">
-                    <span class="metric-value gradient-text" data-i18n="metrics.m2.value">API-first</span>
-                    <span class="metric-label" data-i18n="metrics.m2.label">REST · GraphQL · Webhooks</span>
-                </div>
-                <div class="metric-card">
-                    <span class="metric-value gradient-text" data-i18n="metrics.m3.value">Hanoi</span>
-                    <span class="metric-label" data-i18n="metrics.m3.label">Local roots, global scale</span>
-                </div>
-                <div class="metric-card">
-                    <span class="metric-value gradient-text" data-i18n="metrics.m4.value">24/7</span>
-                    <span class="metric-label" data-i18n="metrics.m4.label">Pipeline observability</span>
-                </div>
+            <div class="container">
+                <ul class="metrics-grid reveal">
+                    <li>
+                        <strong class="metric-value gradient-text" data-i18n="metrics.m1.value">3-in-1</strong>
+                        <span class="metric-label" data-i18n="metrics.m1.label">Data · AI · App pipeline</span>
+                    </li>
+                    <li>
+                        <strong class="metric-value gradient-text" data-i18n="metrics.m2.value">API-first</strong>
+                        <span class="metric-label" data-i18n="metrics.m2.label">REST · GraphQL · Webhooks</span>
+                    </li>
+                    <li>
+                        <strong class="metric-value gradient-text" data-i18n="metrics.m3.value">Hanoi</strong>
+                        <span class="metric-label" data-i18n="metrics.m3.label">Local roots, global scale</span>
+                    </li>
+                    <li>
+                        <strong class="metric-value gradient-text" data-i18n="metrics.m4.value">24/7</strong>
+                        <span class="metric-label" data-i18n="metrics.m4.label">Pipeline observability</span>
+                    </li>
+                </ul>
             </div>
         </section>
 
@@ -122,32 +125,44 @@
                 </div>
                 <div class="tech-grid reveal">
                     <article class="tech-card">
-                        <div class="tech-icon" style="--c:#54AEB4">&#9889;</div>
+                        <div class="tech-icon" style="--c:#54AEB4" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16v10a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V7z"/><path d="M4 7l2.2-3.2A2 2 0 0 1 7.8 3h8.4a2 2 0 0 1 1.6.8L20 7"/><path d="M9 12h6"/><path d="M9 16h4"/></svg>
+                        </div>
                         <h3 data-i18n="tech.c1.title">Data ingestion</h3>
                         <p data-i18n="tech.c1.desc">APIs, webhooks, streams, batch files and event buses into one Nexus core.</p>
                     </article>
                     <article class="tech-card tech-card--highlight">
-                        <div class="tech-icon" style="--c:#4166AC">&#9733;</div>
+                        <div class="tech-icon" style="--c:#4166AC" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.5 4.5L18 9l-4.5 1.5L12 15l-1.5-4.5L6 9l4.5-1.5L12 3z"/><path d="M19 14l.8 2.2L22 17l-2.2.8L19 20l-.8-2.2L16 17l2.2-.8L19 14z"/><path d="M5 15l.6 1.6L7 17.2l-1.4.6L5 19.4l-.6-1.6L3 17.2l1.4-.6L5 15z"/></svg>
+                        </div>
                         <h3 data-i18n="tech.c2.title">AI & models</h3>
                         <p data-i18n="tech.c2.desc">LLMs, classification, embeddings, rules engines and custom model orchestration.</p>
                     </article>
                     <article class="tech-card">
-                        <div class="tech-icon" style="--c:#54AEB4">&#9654;</div>
+                        <div class="tech-icon" style="--c:#54AEB4" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><path d="M14 17.5h7"/><path d="M17.5 14v7"/></svg>
+                        </div>
                         <h3 data-i18n="tech.c3.title">App delivery</h3>
                         <p data-i18n="tech.c3.desc">REST, GraphQL, webhooks and SDKs to embed intelligence in your products.</p>
                     </article>
                     <article class="tech-card">
-                        <div class="tech-icon" style="--c:#4166AC">&#9673;</div>
+                        <div class="tech-icon" style="--c:#4166AC" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h4l2-6 4 12 2-6h6"/><circle cx="19" cy="6" r="2"/></svg>
+                        </div>
                         <h3 data-i18n="tech.c4.title">Observability</h3>
                         <p data-i18n="tech.c4.desc">Pipeline tracing, audit logs, quality metrics and alerting.</p>
                     </article>
                     <article class="tech-card">
-                        <div class="tech-icon" style="--c:#5BCFD5">&#9670;</div>
+                        <div class="tech-icon" style="--c:#5BCFD5" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 4.5-3 8.2-7 9.5C8 19.2 5 15.5 5 11V6l7-3z"/><path d="M9.5 12l1.8 1.8L15 10"/></svg>
+                        </div>
                         <h3 data-i18n="tech.c5.title">Security</h3>
                         <p data-i18n="tech.c5.desc">Encryption, access control, tenant isolation and compliance-ready design.</p>
                     </article>
                     <article class="tech-card">
-                        <div class="tech-icon" style="--c:#487EA8">&#8644;</div>
+                        <div class="tech-icon" style="--c:#487EA8" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M8 18H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h3"/><path d="M16 6h3a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-3"/><path d="M8 12h8"/><path d="M14 9l3 3-3 3"/><path d="M10 15l-3-3 3-3"/></svg>
+                        </div>
                         <h3 data-i18n="tech.c6.title">Scale</h3>
                         <p data-i18n="tech.c6.desc">Cloud-native architecture, queues, caching and horizontal scaling.</p>
                     </article>
@@ -204,69 +219,33 @@
 
         <!-- About -->
         <section class="section about" id="about">
-            <div class="section-fx" aria-hidden="true">
-                <div class="fx-orb fx-orb-1"></div>
-                <div class="fx-orb fx-orb-3"></div>
-                <div class="fx-grid"></div>
-            </div>
-            <div class="container about-layout-hero">
-                <div class="about-copy-col reveal">
+            <div class="container">
+                <div class="section-head section-head--center reveal">
                     <p class="eyebrow" data-i18n="about.eyebrow">Our story</p>
                     <h2><span data-i18n="about.title1">Light of</span> <span class="accent-text" data-i18n="about.title2">Hanoi</span></h2>
                     <p class="section-desc" data-i18n="about.desc">Born in Hanoi — Hanoora blends local innovation with a global vision. We built Nexus as the core where data meets intelligence and becomes real product value.</p>
-                    <div class="about-badges">
-                        <span class="about-badge" data-i18n="about.visual.p1">Data ingestion layer</span>
-                        <span class="about-badge" data-i18n="about.visual.p2">AI reasoning engine</span>
-                        <span class="about-badge" data-i18n="about.visual.p3">Application delivery</span>
-                    </div>
                 </div>
-                <div class="about-visual-col reveal">
-                    <div class="about-visual-glow"></div>
-                    <div class="about-visual-card">
-                        <img src="assets/images/logo/7.png" alt="" width="96" height="96" />
-                        <p class="about-visual-tag" data-i18n="about.visual.tag">The Nexus Core</p>
-                    </div>
-                    <div class="about-float-badge about-float-1" data-i18n="about.p1.title">Hanoora</div>
-                    <div class="about-float-badge about-float-2" data-i18n="about.p2.title">Nexus</div>
-                    <div class="about-float-badge about-float-3" data-i18n="about.p3.title">Pipeline</div>
-                </div>
-            </div>
-            <div class="container">
-                <div class="about-manifesto reveal">
-                    <article class="manifesto-card manifesto-card--1">
-                        <div class="manifesto-person" aria-hidden="true">
-                            <span class="manifesto-avatar">H</span>
-                        </div>
-                        <span class="manifesto-num">01</span>
-                        <div class="manifesto-body">
-                            <h3 data-i18n="about.p1.title">Hanoora</h3>
-                            <blockquote data-i18n="about.q1">Noor — light — is not decoration. It's clarity for every decision your data drives.</blockquote>
-                            <p class="manifesto-label" data-i18n="about.r1">Vision · Light of Hanoi</p>
-                        </div>
-                    </article>
-                    <article class="manifesto-card manifesto-card--2">
-                        <div class="manifesto-person" aria-hidden="true">
-                            <span class="manifesto-avatar">N</span>
-                        </div>
-                        <span class="manifesto-num">02</span>
-                        <div class="manifesto-body">
-                            <h3 data-i18n="about.p2.title">Nexus</h3>
-                            <blockquote data-i18n="about.q2">Nexus is the node — one trusted core connecting sources, models and applications.</blockquote>
-                            <p class="manifesto-label" data-i18n="about.r2">Platform · The Core</p>
-                        </div>
-                    </article>
-                    <article class="manifesto-card manifesto-card--3">
-                        <div class="manifesto-person" aria-hidden="true">
-                            <span class="manifesto-avatar">P</span>
-                        </div>
-                        <span class="manifesto-num">03</span>
-                        <div class="manifesto-body">
-                            <h3 data-i18n="about.p3.title">Pipeline</h3>
-                            <blockquote data-i18n="about.q3">Data flows in, logic processes it, your app delivers the outcome.</blockquote>
-                            <p class="manifesto-label" data-i18n="about.r3">Engine · AI Pipeline</p>
-                        </div>
-                    </article>
-                </div>
+
+                <ol class="story-pillars reveal">
+                    <li>
+                        <span class="story-num" aria-hidden="true">01</span>
+                        <h3 data-i18n="about.p1.title">Hanoora</h3>
+                        <p data-i18n="about.q1">Noor — light — is not decoration. It's clarity for every decision your data drives.</p>
+                        <span class="story-label" data-i18n="about.r1">Vision · Light of Hanoi</span>
+                    </li>
+                    <li>
+                        <span class="story-num" aria-hidden="true">02</span>
+                        <h3 data-i18n="about.p2.title">Nexus</h3>
+                        <p data-i18n="about.q2">Nexus is the node — one trusted core connecting sources, models and applications.</p>
+                        <span class="story-label" data-i18n="about.r2">Platform · The Core</span>
+                    </li>
+                    <li>
+                        <span class="story-num" aria-hidden="true">03</span>
+                        <h3 data-i18n="about.p3.title">Pipeline</h3>
+                        <p data-i18n="about.q3">Data flows in, logic processes it, your app delivers the outcome.</p>
+                        <span class="story-label" data-i18n="about.r3">Engine · AI Pipeline</span>
+                    </li>
+                </ol>
             </div>
         </section>
 
