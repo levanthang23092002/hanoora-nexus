@@ -316,7 +316,7 @@
         if (!canvas) return;
         var ctx = canvas.getContext("2d");
         var particles = [];
-        var count = 48;
+        var count = 64;
 
         function resize() {
             canvas.width = hero.clientWidth;
@@ -329,10 +329,10 @@
                 particles.push({
                     x: Math.random() * canvas.width,
                     y: Math.random() * canvas.height,
-                    r: Math.random() * 1.8 + 0.4,
-                    vx: (Math.random() - 0.5) * 0.35,
-                    vy: (Math.random() - 0.5) * 0.35,
-                    a: Math.random() * 0.5 + 0.15
+                    r: Math.random() * 2.2 + 0.4,
+                    vx: (Math.random() - 0.5) * 0.4,
+                    vy: (Math.random() - 0.5) * 0.4,
+                    a: Math.random() * 0.55 + 0.2
                 });
             }
         }
@@ -346,9 +346,11 @@
                 if (p.y < 0 || p.y > canvas.height) p.vy *= -1;
                 ctx.beginPath();
                 ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-                ctx.fillStyle = i % 3 === 0
-                    ? "rgba(84, 174, 180, " + p.a + ")"
-                    : "rgba(65, 102, 172, " + p.a + ")";
+                ctx.fillStyle = i % 4 === 0
+                    ? "rgba(91, 207, 213, " + p.a + ")"
+                    : i % 3 === 0
+                        ? "rgba(84, 174, 180, " + p.a + ")"
+                        : "rgba(65, 102, 172, " + p.a + ")";
                 ctx.fill();
             });
             requestAnimationFrame(draw);

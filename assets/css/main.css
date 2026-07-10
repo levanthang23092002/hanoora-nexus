@@ -69,6 +69,44 @@ h1, h2, h3, h4, p { margin: 0; }
         linear-gradient(180deg, #0a1020 0%, #070b14 50%, #0c1224 100%);
 }
 
+/* Signature: Noor light sweep across the page */
+.noor-sweep {
+    pointer-events: none;
+    position: fixed;
+    inset: 0;
+    z-index: 50;
+    overflow: hidden;
+    mix-blend-mode: screen;
+    opacity: 0.35;
+}
+
+.noor-sweep::before {
+    content: "";
+    position: absolute;
+    top: -20%;
+    left: -40%;
+    width: 40%;
+    height: 140%;
+    background: linear-gradient(
+        105deg,
+        transparent 0%,
+        rgba(91, 207, 213, 0.05) 35%,
+        rgba(84, 174, 180, 0.18) 50%,
+        rgba(65, 102, 172, 0.08) 65%,
+        transparent 100%
+    );
+    transform: skewX(-12deg);
+    animation: noor-pass 14s ease-in-out infinite;
+}
+
+@keyframes noor-pass {
+    0% { transform: translateX(0) skewX(-12deg); opacity: 0; }
+    8% { opacity: 1; }
+    42% { opacity: 1; }
+    55% { transform: translateX(320%) skewX(-12deg); opacity: 0; }
+    100% { transform: translateX(320%) skewX(-12deg); opacity: 0; }
+}
+
 .gradient-text {
     background: var(--gradient);
     -webkit-background-clip: text;
@@ -152,11 +190,26 @@ h1, h2, h3, h4, p { margin: 0; }
     flex-shrink: 0;
 }
 
+/* Contrast plate — logo file untouched; dark wordmark needs light stage */
+.brand-plate {
+    display: inline-flex;
+    align-items: center;
+    padding: 6px 14px 6px 8px;
+    border-radius: 18px;
+    background:
+        linear-gradient(145deg, rgba(248, 251, 253, 0.98) 0%, rgba(226, 236, 242, 0.96) 100%);
+    border: 1px solid rgba(84, 174, 180, 0.45);
+    box-shadow:
+        0 0 0 1px rgba(12, 18, 36, 0.06),
+        0 8px 28px rgba(0, 0, 0, 0.35),
+        0 0 32px rgba(84, 174, 180, 0.22);
+}
+
 .brand-logo {
     display: block;
     width: auto;
-    height: 78px;
-    max-height: calc(var(--header-h) - 8px);
+    height: 72px;
+    max-height: calc(var(--header-h) - 20px);
 }
 
 .site-nav {
@@ -286,6 +339,42 @@ h1, h2, h3, h4, p { margin: 0; }
     inset: 0;
     z-index: 0;
     pointer-events: none;
+}
+
+/* Hero signature ray — Light of Hanoi */
+.hero-noor {
+    position: absolute;
+    top: -10%;
+    left: 35%;
+    width: 2px;
+    height: 120%;
+    background: linear-gradient(
+        180deg,
+        transparent 0%,
+        rgba(91, 207, 213, 0.0) 10%,
+        rgba(84, 174, 180, 0.55) 45%,
+        rgba(65, 102, 172, 0.25) 70%,
+        transparent 100%
+    );
+    box-shadow:
+        0 0 40px 8px rgba(84, 174, 180, 0.25),
+        0 0 80px 20px rgba(65, 102, 172, 0.15);
+    transform: rotate(18deg);
+    animation: noor-ray 8s ease-in-out infinite;
+    opacity: 0.7;
+}
+
+.hero-noor::before {
+    content: "";
+    position: absolute;
+    inset: 20% -80px;
+    background: radial-gradient(ellipse, rgba(91, 207, 213, 0.2), transparent 70%);
+    filter: blur(20px);
+}
+
+@keyframes noor-ray {
+    0%, 100% { opacity: 0.35; filter: brightness(0.9); }
+    50% { opacity: 0.85; filter: brightness(1.25); }
 }
 
 .hero-orb {
@@ -998,6 +1087,21 @@ h1, h2, h3, h4, p { margin: 0; }
     animation: scene-float 7s ease-in-out infinite;
 }
 
+.about-visual-card::after {
+    content: "";
+    position: absolute;
+    inset: -1px;
+    border-radius: inherit;
+    pointer-events: none;
+    background: linear-gradient(135deg, rgba(91, 207, 213, 0.35), transparent 40%, transparent 60%, rgba(65, 102, 172, 0.25));
+    opacity: 0.5;
+    mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+    -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    padding: 1px;
+}
+
 .about-visual-card img {
     width: 88px;
     height: auto;
@@ -1052,7 +1156,8 @@ h1, h2, h3, h4, p { margin: 0; }
 .manifesto-card {
     position: relative;
     display: flex;
-    gap: 20px;
+    flex-wrap: wrap;
+    gap: 16px 20px;
     padding: 32px 28px;
     border-radius: var(--radius);
     background: linear-gradient(165deg, rgba(24, 34, 52, 0.95) 0%, rgba(12, 18, 36, 0.92) 100%);
@@ -1060,6 +1165,52 @@ h1, h2, h3, h4, p { margin: 0; }
     box-shadow: var(--shadow-card);
     transition: transform 0.3s var(--ease), box-shadow 0.3s, border-color 0.3s;
     overflow: hidden;
+}
+
+.manifesto-person {
+    flex-basis: 100%;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 4px;
+}
+
+.manifesto-avatar {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 1rem;
+    color: #fff;
+    background: var(--gradient);
+    border: 2px solid rgba(91, 207, 213, 0.45);
+    box-shadow: 0 0 20px rgba(84, 174, 180, 0.35);
+}
+
+.manifesto-card--1 .manifesto-avatar {
+    background: linear-gradient(135deg, #4166ac, #487ea8);
+}
+
+.manifesto-card--2 .manifesto-avatar {
+    background: linear-gradient(135deg, #487ea8, #54aeb4);
+}
+
+.manifesto-card--3 .manifesto-avatar {
+    background: linear-gradient(135deg, #54aeb4, #5bcfd5);
+}
+
+.manifesto-card blockquote {
+    margin: 0 0 16px;
+    font-size: 0.98rem;
+    line-height: 1.75;
+    color: #c5d0dc;
+    font-style: italic;
+    position: relative;
+    padding-left: 14px;
+    border-left: 2px solid rgba(84, 174, 180, 0.45);
 }
 
 .manifesto-card--1 {
@@ -1120,14 +1271,6 @@ h1, h2, h3, h4, p { margin: 0; }
     margin-bottom: 12px;
     letter-spacing: -0.02em;
     color: var(--text);
-}
-
-.manifesto-card blockquote {
-    margin: 0 0 16px;
-    font-size: 0.95rem;
-    line-height: 1.7;
-    color: #8b9cb0;
-    font-style: normal;
 }
 
 .manifesto-label {
@@ -1288,13 +1431,14 @@ h1, h2, h3, h4, p { margin: 0; }
     background: rgba(255, 255, 255, 0.06);
     border: 1px solid rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(8px);
-    transition: transform 0.25s, background 0.25s, border-color 0.25s;
+    transition: transform 0.25s var(--ease), background 0.25s, border-color 0.25s, box-shadow 0.25s;
 }
 
 .step-card:hover {
     transform: translateY(-4px);
     background: rgba(255, 255, 255, 0.09);
     border-color: rgba(84, 174, 180, 0.35);
+    box-shadow: 0 0 28px rgba(84, 174, 180, 0.12);
 }
 
 .step-node {
@@ -1306,6 +1450,16 @@ h1, h2, h3, h4, p { margin: 0; }
     border-radius: 50%;
     background: var(--gradient);
     box-shadow: 0 0 0 4px rgba(84, 174, 180, 0.2), 0 4px 16px rgba(84, 174, 180, 0.4);
+    animation: node-pulse 2.8s ease-in-out infinite;
+}
+
+.step-card:nth-child(2) .step-node { animation-delay: 0.4s; }
+.step-card:nth-child(3) .step-node { animation-delay: 0.8s; }
+.step-card:nth-child(4) .step-node { animation-delay: 1.2s; }
+
+@keyframes node-pulse {
+    0%, 100% { box-shadow: 0 0 0 4px rgba(84, 174, 180, 0.2), 0 4px 16px rgba(84, 174, 180, 0.35); }
+    50% { box-shadow: 0 0 0 6px rgba(84, 174, 180, 0.12), 0 0 24px rgba(91, 207, 213, 0.65); }
 }
 
 .step-num {
@@ -1335,8 +1489,44 @@ h1, h2, h3, h4, p { margin: 0; }
         top: 28px;
         left: 12%;
         right: 12%;
-        height: 2px;
-        background: linear-gradient(90deg, transparent, rgba(84, 174, 180, 0.5) 20%, rgba(65, 102, 172, 0.5) 80%, transparent);
+        height: 3px;
+        border-radius: 999px;
+        background: linear-gradient(
+            90deg,
+            transparent,
+            rgba(84, 174, 180, 0.25) 12%,
+            rgba(65, 102, 172, 0.35) 50%,
+            rgba(84, 174, 180, 0.25) 88%,
+            transparent
+        );
+        overflow: hidden;
+        box-shadow: 0 0 12px rgba(84, 174, 180, 0.2);
+    }
+
+    .process-line-beam {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 28%;
+        border-radius: inherit;
+        background: linear-gradient(
+            90deg,
+            transparent,
+            rgba(91, 207, 213, 0.15),
+            rgba(91, 207, 213, 0.95),
+            rgba(84, 174, 180, 0.15),
+            transparent
+        );
+        box-shadow: 0 0 18px 2px rgba(91, 207, 213, 0.55);
+        animation: pipeline-flow 2.8s ease-in-out infinite;
+    }
+
+    @keyframes pipeline-flow {
+        0% { transform: translateX(-40%); opacity: 0; }
+        15% { opacity: 1; }
+        85% { opacity: 1; }
+        100% { transform: translateX(380%); opacity: 0; }
     }
 }
 
@@ -1557,7 +1747,7 @@ h1, h2, h3, h4, p { margin: 0; }
     .metrics-grid { grid-template-columns: 1fr 1fr; }
     .metric-value { font-size: 1.35rem; }
 
-    .brand-logo { height: 56px; }
+    .brand-logo { height: 52px; }
 
     .nav-toggle { display: block; }
 
@@ -1591,7 +1781,9 @@ h1, h2, h3, h4, p { margin: 0; }
         transition-duration: 0.01ms !important;
     }
     .hero-orb, .fx-orb, .hero-scene, .hero-badge, .about-float-badge,
-    .hero-visual-glow, .about-visual-glow, .tech-pipeline i {
+    .hero-visual-glow, .about-visual-glow, .tech-pipeline i,
+    .hero-noor, .noor-sweep::before, .process-line-beam, .step-node {
         animation: none !important;
     }
+    .noor-sweep { display: none; }
 }
