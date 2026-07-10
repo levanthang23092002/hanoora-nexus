@@ -347,8 +347,8 @@
                 ctx.beginPath();
                 ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
                 ctx.fillStyle = i % 3 === 0
-                    ? "rgba(34, 211, 238, " + p.a + ")"
-                    : "rgba(37, 99, 235, " + p.a + ")";
+                    ? "rgba(84, 174, 180, " + p.a + ")"
+                    : "rgba(65, 102, 172, " + p.a + ")";
                 ctx.fill();
             });
             requestAnimationFrame(draw);
