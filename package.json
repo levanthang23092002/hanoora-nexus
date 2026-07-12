@@ -2,6 +2,7 @@
   "name": "hanoora-nexus-site",
   "private": true,
   "scripts": {
-    "sync-env": "node scripts/sync-env.js"
+    "sync-env": "node scripts/sync-env.js",
+    "build": "node scripts/sync-env.js"
   }
 }
