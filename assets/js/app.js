@@ -58,6 +58,8 @@
             "contact.name": "Your name", "contact.email": "Your email", "contact.message": "Message", "contact.send": "Send message",
             "contact.errName": "Name is required (min. 2 characters).", "contact.errEmail": "Please enter a valid email.",
             "contact.errMessage": "Message is required.", "contact.success": "Thank you! We'll get back to you soon.",
+            "contact.errSend": "Something went wrong. Please try again or email hello@hanooranexus.com.",
+            "contact.errConfig": "Contact form is not configured yet. Please email hello@hanooranexus.com.",
             "footer.tagline": "Light of Hanoi · AI Nexus Core",
             "footer.hq.title": "Headquarters · Hanoi", "footer.hq.addr": "Hanoora Nexus<br>Hanoi, Vietnam",
             "footer.prod.title": "Platform", "footer.prod.desc": "Data ingestion · AI processing · App delivery · Monitoring & APIs",
@@ -116,6 +118,8 @@
             "contact.name": "Họ và tên", "contact.email": "Email", "contact.message": "Tin nhắn", "contact.send": "Gửi tin nhắn",
             "contact.errName": "Vui lòng nhập tên (tối thiểu 2 ký tự).", "contact.errEmail": "Vui lòng nhập email hợp lệ.",
             "contact.errMessage": "Vui lòng nhập nội dung tin nhắn.", "contact.success": "Cảm ơn bạn! Chúng tôi sẽ liên hệ sớm.",
+            "contact.errSend": "Có lỗi xảy ra. Vui lòng thử lại hoặc gửi email hello@hanooranexus.com.",
+            "contact.errConfig": "Form chưa được cấu hình. Vui lòng gửi email hello@hanooranexus.com.",
             "footer.tagline": "Ánh sáng Hà Nội · Lõi AI Nexus",
             "footer.hq.title": "Trụ sở · Hà Nội", "footer.hq.addr": "Hanoora Nexus<br>Hà Nội, Việt Nam",
             "footer.prod.title": "Nền tảng", "footer.prod.desc": "Thu thập dữ liệu · Xử lý AI · Giao app · Giám sát & API",
@@ -174,6 +178,8 @@
             "contact.name": "Ihr Name", "contact.email": "Ihre E-Mail", "contact.message": "Nachricht", "contact.send": "Nachricht senden",
             "contact.errName": "Name erforderlich (mind. 2 Zeichen).", "contact.errEmail": "Bitte gültige E-Mail eingeben.",
             "contact.errMessage": "Nachricht erforderlich.", "contact.success": "Vielen Dank! Wir melden uns bald.",
+            "contact.errSend": "Etwas ist schiefgelaufen. Bitte erneut versuchen oder hello@hanooranexus.com schreiben.",
+            "contact.errConfig": "Kontaktformular noch nicht konfiguriert. Bitte an hello@hanooranexus.com schreiben.",
             "footer.tagline": "Licht von Hanoi · KI-Nexus-Kern",
             "footer.hq.title": "Hauptsitz · Hanoi", "footer.hq.addr": "Hanoora Nexus<br>Hanoi, Vietnam",
             "footer.prod.title": "Plattform", "footer.prod.desc": "Datenaufnahme · KI-Verarbeitung · App-Lieferung · Monitoring & APIs",
@@ -266,6 +272,11 @@
     function initForm() {
         var form = document.getElementById("contact-form");
         var success = document.getElementById("form-success");
+        var globalError = document.getElementById("form-error");
+        var accessKeyInput = document.getElementById("web3forms-access-key");
+        var accessKey = (window.__ENV && window.__ENV.WEB3FORMS_ACCESS_KEY) || "";
+
+        if (accessKeyInput) accessKeyInput.value = accessKey;
 
         form.addEventListener("submit", function (e) {
             e.preventDefault();
@@ -278,6 +289,10 @@
                 document.getElementById("err-" + field).classList.remove("show");
             });
             success.hidden = true;
+            if (globalError) {
+                globalError.hidden = true;
+                globalError.classList.remove("show");
+            }
 
             if (name.length < 2) {
                 document.getElementById("err-name").classList.add("show");
@@ -293,17 +308,50 @@
             }
             if (!ok) return;
 
+            if (!accessKey) {
+                if (globalError) {
+                    globalError.textContent = t("contact.errConfig");
+                    globalError.hidden = false;
+                    globalError.classList.add("show");
+                }
+                return;
+            }
+
             var btn = form.querySelector("button[type=submit]");
             var label = btn.textContent;
             btn.textContent = LANG === "vi" ? "Đang gửi..." : LANG === "de" ? "Senden..." : "Sending...";
             btn.disabled = true;
 
-            setTimeout(function () {
-                form.reset();
-                btn.textContent = label;
-                btn.disabled = false;
-                success.hidden = false;
-            }, 700);
+            var payload = new FormData(form);
+            payload.set("access_key", accessKey);
+            payload.set("name", name);
+            payload.set("email", email);
+            payload.set("message", message);
+
+            fetch("https://api.web3forms.com/submit", {
+                method: "POST",
+                body: payload
+            })
+                .then(function (res) { return res.json().then(function (data) { return { ok: res.ok, data: data }; }); })
+                .then(function (result) {
+                    if (!result.ok || !result.data.success) {
+                        throw new Error((result.data && result.data.message) || "submit failed");
+                    }
+                    form.reset();
+                    if (accessKeyInput) accessKeyInput.value = accessKey;
+                    success.hidden = false;
+                })
+                .catch(function () {
+                    if (globalError) {
+                        globalError.textContent = t("contact.errSend");
+                        globalError.hidden = false;
+                        globalError.classList.add("show");
+                    }
+                })
+                .finally(function () {
+                    btn.textContent = label;
+                    btn.disabled = false;
+                });
         });
     }
 

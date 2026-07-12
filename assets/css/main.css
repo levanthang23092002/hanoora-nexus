@@ -1561,6 +1561,19 @@ h1, h2, h3, h4, p { margin: 0; }
 
 .form-error.show { display: block; }
 
+.form-error--global {
+    margin-top: 14px;
+}
+
+.contact-form .botcheck {
+    position: absolute;
+    left: -9999px;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+    pointer-events: none;
+}
+
 .form-success {
     margin-top: 14px;
     padding: 12px 14px;
@@ -1570,8 +1583,6 @@ h1, h2, h3, h4, p { margin: 0; }
     color: #0f5c64;
     font-size: 0.92rem;
     font-weight: 600;
-}
-    font-size: 0.92rem;
 }
 
 /* Footer */

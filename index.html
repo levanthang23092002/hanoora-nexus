@@ -319,7 +319,11 @@
                         <li data-i18n="contact.f3">EN · VI · DE supported</li>
                     </ul>
                 </div>
-                <form class="contact-form reveal" id="contact-form" novalidate>
+                <form class="contact-form reveal" id="contact-form" action="https://api.web3forms.com/submit" method="POST" novalidate>
+                    <input type="hidden" name="access_key" id="web3forms-access-key" value="" />
+                    <input type="hidden" name="subject" value="Hanoora Nexus — New contact message" />
+                    <input type="hidden" name="from_name" value="Hanoora Nexus Website" />
+                    <input type="checkbox" name="botcheck" class="botcheck" tabindex="-1" autocomplete="off" aria-hidden="true" />
                     <label>
                         <span data-i18n="contact.name">Your name</span>
                         <input type="text" id="name" name="name" autocomplete="name" />
@@ -337,6 +341,7 @@
                     <p class="form-error" id="err-message" data-i18n="contact.errMessage"></p>
                     <button type="submit" class="btn btn-primary btn-block" data-i18n="contact.send">Send message</button>
                     <p class="form-success" id="form-success" hidden data-i18n="contact.success"></p>
+                    <p class="form-error form-error--global" id="form-error" hidden data-i18n="contact.errSend"></p>
                 </form>
             </div>
         </section>
@@ -366,6 +371,7 @@
         </div>
     </footer>
 
+    <script src="assets/js/config.js"></script>
     <script src="assets/js/app.js"></script>
 </body>
 </html>
