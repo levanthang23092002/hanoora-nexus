@@ -134,6 +134,7 @@ h1, h2, h3, h4, p { margin: 0; }
 
 .section {
     padding: 96px 0;
+    scroll-margin-top: var(--header-h);
 }
 
 .section-head {
@@ -266,15 +267,44 @@ h1, h2, h3, h4, p { margin: 0; }
     border-radius: 12px;
     background: var(--surface);
     cursor: pointer;
+    position: relative;
+    transition: background 0.2s var(--ease), border-color 0.2s var(--ease);
 }
 
 .nav-toggle span {
     display: block;
     width: 18px;
     height: 2px;
-    margin: 4px auto;
     background: #e8eef4;
     border-radius: 2px;
+    position: absolute;
+    left: calc(50% - 9px);
+    transition: transform 0.25s var(--ease), opacity 0.25s var(--ease);
+}
+
+.nav-toggle span:nth-child(1) {
+    top: calc(50% - 5px);
+}
+
+.nav-toggle span:nth-child(2) {
+    top: calc(50% - 1px);
+}
+
+.nav-toggle span:nth-child(3) {
+    top: calc(50% + 3px);
+}
+
+.nav-toggle[aria-expanded="true"] span:nth-child(1) {
+    transform: translateY(4px) rotate(45deg);
+}
+
+.nav-toggle[aria-expanded="true"] span:nth-child(2) {
+    opacity: 0;
+    transform: scale(0);
+}
+
+.nav-toggle[aria-expanded="true"] span:nth-child(3) {
+    transform: translateY(-4px) rotate(-45deg);
 }
 
 /* Buttons */
@@ -587,7 +617,6 @@ h1, h2, h3, h4, p { margin: 0; }
 
     .hero-visual {
         min-height: 300px;
-        order: -1;
     }
 
     .badge-2 { left: 0; }
@@ -1684,36 +1713,127 @@ h1, h2, h3, h4, p { margin: 0; }
 }
 
 @media (max-width: 768px) {
+    :root {
+        --header-h: 70px;
+    }
+
     .section { padding: 72px 0; }
 
     .metrics-strip { padding: 20px 0 4px; }
     .metrics-grid { grid-template-columns: 1fr 1fr; }
     .metric-value { font-size: 1.25rem; }
 
-    .brand-logo { height: 52px; }
+    .brand-logo { height: 38px; }
 
-    .nav-toggle { display: block; }
+    .nav-toggle {
+        display: block;
+        order: 3;
+        margin-left: 12px;
+    }
 
     .site-nav {
         position: fixed;
         inset: var(--header-h) 0 auto 0;
-        display: none;
+        display: flex;
         flex-direction: column;
-        padding: 16px;
-        background: rgba(7, 11, 20, 0.98);
-        border-bottom: 1px solid rgba(84, 174, 180, 0.14);
-        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+        padding: 24px;
+        background: rgba(7, 11, 20, 0.96);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        border-bottom: 1px solid rgba(84, 174, 180, 0.18);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.65);
+        gap: 12px;
+        align-items: center;
+        opacity: 0;
+        transform: translateY(-10px);
+        pointer-events: none;
+        transition: opacity 0.3s var(--ease), transform 0.3s var(--ease);
+        z-index: 99;
     }
 
-    .site-nav.open { display: flex; }
+    .site-nav a {
+        width: 100%;
+        text-align: center;
+        padding: 12px;
+        font-size: 1rem;
+        font-weight: 500;
+        color: #d5dee8;
+    }
 
-    .lang-switch { margin-left: auto; }
+    .site-nav.open {
+        opacity: 1;
+        transform: translateY(0);
+        pointer-events: all;
+    }
 
-    .footer-logo { height: 128px; }
+    .lang-switch {
+        order: 2;
+        margin-left: auto;
+        padding: 2px;
+    }
+
+    .lang-switch a {
+        padding: 4px 8px;
+        font-size: 0.72rem;
+    }
+
+    .footer-grid {
+        gap: 36px;
+        text-align: center;
+    }
+
+    .footer-logo {
+        height: 80px;
+        margin-inline: auto;
+    }
 
     .tech-grid { grid-template-columns: 1fr; }
 
     .process-steps { grid-template-columns: 1fr; }
+
+    .industry-row {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-badge {
+        padding: 6px 10px;
+        font-size: 0.7rem;
+    }
+    
+    .badge-1 { top: 4%; right: 4%; }
+    .badge-2 { bottom: 24%; left: 2%; }
+    .badge-3 { bottom: 4%; right: 10%; }
+
+    .tech-pipeline {
+        gap: 6px;
+        padding: 6px 12px;
+    }
+
+    .tech-pipeline span {
+        font-size: 0.7rem;
+    }
+
+    .tech-pipeline span.is-core {
+        padding: 4px 10px;
+    }
+
+    .tech-pipeline i {
+        width: 16px;
+    }
+
+    .product-panel {
+        padding: 24px 20px;
+    }
+
+    .about-cell--copy {
+        padding: 24px;
+    }
+
+    .contact-form {
+        padding: 20px;
+    }
 }
 
 
